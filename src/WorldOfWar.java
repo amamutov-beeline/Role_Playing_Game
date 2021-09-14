@@ -42,7 +42,7 @@ public class WorldOfWar {
                 command(br.readLine());
             }
             case "купить" -> {
-                if (store(string)) {
+                if (store()) {
                     System.out.println("Ваше здоровье пополнено на 100 единиц");
                     command("1");
                 } else {
@@ -54,7 +54,7 @@ public class WorldOfWar {
         command(br.readLine());
     }
 
-    private static boolean store(String string) {
+    private static boolean store() {
         if (gamer.getGold() >= 50) {
             gamer.setHp(gamer.getHp() + 100);
             gamer.setGold(gamer.getGold() - 50);
